@@ -1,0 +1,170 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>시원쌤 | 헤어라인, 견적 받기 전에 먼저 물어보세요</title>
+<meta name="description" content="이마·헤어라인·밀도 보강 모발이식, 수술실 17년차 간호사 시원쌤이 10분 무료 전화 상담으로 답해드립니다.">
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/static/pretendard.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@500;700&display=swap">
+<style>
+  :root{--ink:#1d2a26;--sub:#66706b;--line:#e3dbcf;--bg:#f6f1ea;--card:#fffdf9;--green:#1f3d36;--green2:#2c5348;--clay:#b8795b;--warn:#9a3b2f}
+  *{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:Pretendard,-apple-system,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;word-break:keep-all;-webkit-font-smoothing:antialiased}
+  .wrap{max-width:460px;margin:0 auto;padding:0 22px}
+  .serif{font-family:'Noto Serif KR',serif}
+
+  header{display:flex;justify-content:space-between;align-items:center;padding:18px 0}
+  .logo{font-family:'Noto Serif KR',serif;font-weight:700;font-size:21px;letter-spacing:-.01em;color:var(--green)}
+  .logo small{font:500 11px Pretendard,sans-serif;color:var(--sub);letter-spacing:.08em;margin-left:6px}
+  .free{font-size:12px;font-weight:600;color:var(--green);border:1px solid var(--green);padding:4px 10px;border-radius:999px}
+
+  /* 누끼 사진(투명 배경)을 아치 바닥에 붙임 */
+  .hero{padding:6px 0 0}
+  .photo{position:relative;aspect-ratio:4/4.3;border-radius:200px 200px 6px 6px;overflow:hidden;
+         background:linear-gradient(170deg,#e9dfd2,#d6c8b6 60%,#c3b29d);}
+  /* 원본이 오른쪽 어깨에서 잘려 있어 오른쪽 끝을 아치 끝에 붙임(팔이 프레임 밖으로 이어져 보이게).
+     width + left = 100% 유지, 얼굴(사진 폭 42% 지점)이 가운데 오도록 86% / 14%. 왼쪽 잘린 면만 흐리게 */
+  .photo img{position:absolute;bottom:0;left:14%;width:86%;height:auto;
+             -webkit-mask-image:linear-gradient(to right,transparent,#000 14%);
+                     mask-image:linear-gradient(to right,transparent,#000 14%)}
+  .badge{position:absolute;left:14px;bottom:14px;background:rgba(255,253,249,.94);border-radius:4px;padding:10px 14px;box-shadow:0 6px 20px rgba(31,61,54,.12)}
+  .badge b{display:block;font-family:'Noto Serif KR',serif;font-size:22px;color:var(--green);line-height:1.1}
+  .badge span{font-size:12px;color:var(--sub)}
+
+  h1{font-family:'Noto Serif KR',serif;font-weight:700;font-size:31px;line-height:1.38;letter-spacing:-.02em;margin:26px 0 12px}
+  h1 em{font-style:normal;color:var(--clay)}
+  .lead{color:var(--sub);font-size:16px}
+
+  .card{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:20px;margin:24px 0 8px;box-shadow:0 10px 30px rgba(31,61,54,.06)}
+  .card .t{font-weight:700;font-size:15px;margin-bottom:12px}
+  form{display:grid;gap:12px}
+  input[type=tel]{font:600 20px Pretendard,sans-serif;padding:15px;border:1px solid var(--line);border-radius:4px;background:#fff;color:var(--ink);width:100%;text-align:center;letter-spacing:.06em}
+  input[type=tel]:focus{outline:2px solid var(--green);outline-offset:-1px}
+  .btn{background:var(--green);color:#fff;font:700 17px Pretendard,sans-serif;padding:17px;border:0;border-radius:4px;cursor:pointer;width:100%;transition:background .15s}
+  .btn:hover{background:var(--green2)} .btn:disabled{opacity:.6}
+  .agree{display:flex;gap:8px;align-items:flex-start;font-size:13px;color:var(--sub)}
+  .agree input{width:17px;height:17px;flex:none;margin-top:2px;accent-color:var(--green)}
+  details{font-size:12px;color:var(--sub)} summary{cursor:pointer} details p{margin-top:6px}
+  .hp{position:absolute;left:-9999px}
+  .err{color:var(--warn);font-size:13px;min-height:1em}
+  .note{font-size:12px;color:var(--sub);text-align:center}
+  #done{display:none;text-align:center;padding:12px 0}
+  #done b{font-family:'Noto Serif KR',serif;font-size:20px;display:block;margin-bottom:4px;color:var(--green)}
+
+  section{padding:40px 0 0}
+  h2{font-family:'Noto Serif KR',serif;font-size:22px;font-weight:700;letter-spacing:-.01em;margin-bottom:16px}
+  .ask{list-style:none;display:grid;gap:10px}
+  .ask li{background:var(--card);border:1px solid var(--line);border-radius:6px;padding:14px 16px;font-size:15px}
+  .ask li::before{content:'Q';font-family:'Noto Serif KR',serif;font-weight:700;color:var(--clay);margin-right:10px}
+  .steps{list-style:none;counter-reset:s;display:grid;gap:18px}
+  .steps li{counter-increment:s;display:grid;grid-template-columns:36px 1fr;gap:12px;align-items:start}
+  .steps li::before{content:counter(s);width:36px;height:36px;border-radius:50%;background:var(--green);color:#fff;display:grid;place-items:center;font-weight:700}
+  .steps b{display:block;font-size:15px} .steps span{font-size:14px;color:var(--sub)}
+  .promise{margin-top:40px;background:var(--green);color:#f3ede4;border-radius:6px;padding:26px 22px}
+  .promise p{font-family:'Noto Serif KR',serif;font-size:19px;line-height:1.55}
+  .promise span{display:block;margin-top:10px;font-size:13px;opacity:.75}
+  footer{padding:36px 0 110px;font-size:12px;color:var(--sub)}
+
+  /* 아래로 내렸을 때 다시 신청으로 */
+  .sticky{position:fixed;left:0;right:0;bottom:0;padding:12px 22px calc(12px + env(safe-area-inset-bottom));background:linear-gradient(to top,var(--bg) 70%,rgba(246,241,234,0));display:none}
+  .sticky a{display:block;max-width:416px;margin:0 auto;text-align:center;text-decoration:none}
+  .sticky.on{display:block}
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <div class="logo">시원쌤<small>HAIRLINE</small></div>
+    <span class="free">10분 무료</span>
+  </header>
+
+  <div class="hero">
+    <div class="photo">
+      <img src="siwonssam_cutout.webp" alt="수술 모자와 수술복을 입은 시원쌤">
+      <div class="badge"><b>17년차</b><span>모발이식 수술실 간호사</span></div>
+    </div>
+    <h1>견적 받기 전에,<br><em>시원쌤</em>에게<br>먼저 물어보세요</h1>
+    <p class="lead">이마 · 헤어라인 · 밀도 보강.<br>수술실에서 17년 본 그대로, 전화로 10분 솔직하게 답해드려요.</p>
+  </div>
+
+  <div class="card" id="apply">
+    <p class="t">번호만 남기시면 시원쌤이 직접 전화드려요</p>
+    <form id="f" novalidate>
+      <input name="phone" type="tel" inputmode="numeric" autocomplete="tel" placeholder="010-0000-0000" aria-label="휴대폰 번호" required>
+      <input class="hp" name="website" tabindex="-1" autocomplete="off" aria-hidden="true">
+      <label class="agree"><input type="checkbox" name="agree" required> 개인정보 수집·이용 동의 (필수)</label>
+      <details><summary>내용 보기</summary>
+        <p>수집 항목: 휴대폰 번호 · 이용 목적: 모발이식 전화 상담 연락 · 보유 기간: 상담 완료 후 6개월(요청 시 즉시 파기). 동의를 거부할 수 있으며, 거부 시 상담 신청이 제한됩니다. 보호책임자: [이름] · 문의: [연락처]</p>
+      </details>
+      <p class="err" id="err"></p>
+      <button class="btn" id="submit">10분 무료 상담 신청</button>
+      <p class="note">상담비 없음 · 원하지 않으면 병원 연결하지 않아요</p>
+    </form>
+    <div id="done"><b>신청이 접수됐어요</b><p>곧 시원쌤이 전화드릴게요.</p></div>
+  </div>
+
+  <section>
+    <h2>이런 걸 물어보세요</h2>
+    <ul class="ask">
+      <li>견적서에 적힌 모 수, 어떻게 확인해요?</li>
+      <li>제 이마엔 몇 모 정도 필요할까요?</li>
+      <li>헤어라인이랑 밀도 보강, 저는 뭐가 맞아요?</li>
+      <li>회복 기간엔 실제로 어때요?</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>상담은 이렇게 진행돼요</h2>
+    <ol class="steps">
+      <li><div><b>번호 남기기</b><span>이름도 필요 없어요.</span></div></li>
+      <li><div><b>시원쌤이 직접 전화 (10분)</b><span>고민부터 듣고, 견적 보는 법을 알려드려요.</span></div></li>
+      <li><div><b>원하실 때만 병원 연결</b><span>수술 날엔 시원쌤이 수술실에서 맞이해 드려요.</span></div></li>
+    </ol>
+  </section>
+
+  <div class="promise">
+    <p>“안 맞는 분께는<br>안 맞는다고 말씀드려요.”</p>
+    <span>— 시원쌤</span>
+  </div>
+
+  <footer>본 페이지는 의학적 진단이나 치료를 대신하지 않습니다. 상담 내용은 개인에 따라 다를 수 있습니다.</footer>
+</div>
+
+<div class="sticky" id="sticky"><a class="btn" href="#apply">10분 무료 상담 신청</a></div>
+
+<script>
+// 구글 Apps Script 웹앱 URL (apps_script.gs 배포 후 붙여넣기)
+const ENDPOINT = '';
+
+const f = document.getElementById('f'), err = document.getElementById('err');
+// 어떤 콘텐츠에서 왔는지: 링크 끝에 ?from=영상코드
+const from = new URLSearchParams(location.search).get('from') || '';
+
+// 신청 카드가 화면 밖으로 나가면 하단 버튼 표시
+new IntersectionObserver(([e]) => document.getElementById('sticky').classList.toggle('on', !e.isIntersecting && e.boundingClientRect.top < 0))
+  .observe(document.getElementById('apply'));
+
+f.addEventListener('submit', async e => {
+  e.preventDefault();
+  const d = new FormData(f);
+  const phone = d.get('phone').replace(/\D/g, '');
+  err.textContent = '';
+  if (!/^01[016789]\d{7,8}$/.test(phone)) return err.textContent = '휴대폰 번호를 확인해 주세요.';
+  if (!d.get('agree')) return err.textContent = '개인정보 수집·이용에 동의해 주세요.';
+  if (d.get('website')) return; // 스팸 봇
+  if (!ENDPOINT) return err.textContent = '아직 저장소가 연결되지 않았어요. (ENDPOINT 설정 필요)';
+  const btn = document.getElementById('submit'); btn.disabled = true;
+  try {
+    await fetch(ENDPOINT, { method: 'POST', mode: 'no-cors', body: new URLSearchParams({ phone, from }) });
+    f.style.display = 'none';
+    document.getElementById('done').style.display = 'block';
+  } catch {
+    err.textContent = '전송에 실패했어요. 잠시 후 다시 시도해 주세요.';
+    btn.disabled = false;
+  }
+});
+</script>
+</body>
+</html>
